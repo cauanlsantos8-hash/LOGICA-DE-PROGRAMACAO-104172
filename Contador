@@ -1,0 +1,23 @@
+contador = 0
+
+while True:
+    print("\n===== CONTADORA =====")
+    print("Valor atual:", contador)
+    print("1 - Aumentar")
+    print("2 - Diminuir")
+    print("3 - Zerar")
+    print("4 - Sair")
+
+    opcao = input("Escolha uma opcao: ")
+
+    if opcao == "1":
+        contador += 1
+    elif opcao == "2":
+        contador -= 1
+    elif opcao == "3":
+        contador = 0
+    elif opcao == "4":
+        print("Contadora encerrada!")
+        break
+    else:
+        print("Opcao invalida!")
