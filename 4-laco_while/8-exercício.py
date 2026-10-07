@@ -2,7 +2,7 @@ import os
 os.system('cls')
 
 while True:
-    print('==== MENU DE OPÇÕES ===')
+    print('= MENU DE OPÇÕES =')
     print('1 - X-Tudo ------- R$ 25,90')
     print('2 - X-Salada ----- R$ 15,90')
     print('3 - Cachorro-Quente - R$ 10,90')

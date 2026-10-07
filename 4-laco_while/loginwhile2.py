@@ -2,7 +2,7 @@ import os
 os.system('cls')
 
 print('= TELA PARA CADASTRO =')
-login_cadastrado = 'Marta'
+login_cadastrado = 'Cauan'
 senha_cadastrada = '4002'
 
 while True:

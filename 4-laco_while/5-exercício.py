@@ -2,7 +2,6 @@ import os
 import time
 os.system('cls')
 
-# MATENDO OS DADOS.
 login_salvo = 'Cauan'
 senha_salva ='@4002'
 

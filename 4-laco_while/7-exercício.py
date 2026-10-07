@@ -1,3 +1,7 @@
+import os
+os.system('cls')
+
+
 nota1 = float(input("Digite a primeira nota (0 a 10): "))
 while nota1 < 0 or nota1 > 10:
     nota1 = float(input("Nota inválida. Digite a primeira nota novamente (0 a 10): "))
@@ -12,7 +16,7 @@ while nota3 < 0 or nota3 > 10:
 
 media = (nota1 + nota2 + nota3) / 3
 
-print(f"\nMédia do aluno: {media:.2f}")
+print(f"\nMédia do aluno: {media:}")
 
 if media >= 7.0:
     print("Situação: APROVADO")

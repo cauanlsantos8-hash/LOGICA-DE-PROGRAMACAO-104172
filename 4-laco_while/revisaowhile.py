@@ -13,4 +13,4 @@ while nota2 < 0 or nota2 > 10:
 media = (nota1 + nota2) / 2
 
 
-print(f"\nA média aritmética do aluno é: {media:.2f}")
+print(f"\nA média aritmética do aluno é: {media:}")
