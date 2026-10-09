@@ -1,20 +1,22 @@
 import os
-os.system('cls')
-
+import time
 
 soma = 0
-contador = 0
+quantidade_numeros = 0
 
-valor = int(input("Digite um número inteiro positivo (ou um negativo para parar): "))
+while True:
+    os.system('cls')
+    numero = int(input('Digite um número: '))
 
-while valor >= 0:
-    soma += valor
-    contador += 1
-    valor = int(input("Digite o próximo número (ou um negativo para parar): "))
+    if numero >= 0:
+        soma += numero
+        quantidade_numeros += 1
+        time.sleep(2)
+    else:
+        break
 
-if contador > 0:
-    media = soma / contador
-    print(f"\nQuantidade de números informados: {contador}")
-    print(f"A média aritmética é: {media:}")
+if quantidade_numeros == 0:
+    print('Não foram inseridos números. \n')
 else:
-    print("\nNenhum número positivo foi digitado.")
+    media = soma / quantidade_numeros
+    print(f'Média: {media}')

@@ -1,63 +1,54 @@
 import os
-def limpar_tela():
+
+contador_famillias = 0
+quantidade_geral_filhos = 0
+soma_salario = 0
+maior_salario = 0
+menor_salario = 9999
+
+while True:
     os.system('cls')
+    print('''
+=== MENU ===
+1 - Adicionar família
+2 - Sair e exibir resultados
+''')
+    opcao = int(input('Digite a opção desejada: '))
+
+    match opcao:
+        case 1:
+            print('=== CADASTRO ===')
+            salario = float(input('Digite o salário: R$ '))
+            numero_de_filhos = float(input('Digite a quantidade de filhos: '))
+
+            contador_famillias += 1
+            soma_salario += salario
+            quantidade_geral_filhos += numero_de_filhos
+
+            maior_salario = max(salario, maior_salario)
+            menor_salario = min(salario, menor_salario)
 
 
-total_familias = 0
-soma_salarios = 0.0
-soma_filhos = 0
-maior_salario = None
-menor_salario = None
+            print('\nFamília adicionada com sucesso!')
+            input('Pressione uma tecla para continuar...')
+        case 2:
+            break
+        case _:
+            print('\nOpção inválida! \n')
+            input('Pressione uma tecla para continuar...')
 
-opcao = 0
+if contador_famillias == 0:
+    print('\nNenhuma família cadastrada. \n')
+    input('Pressione uma tecla para continuar...')
+else:
+    media_salario = soma_salario / contador_famillias
+    media_numero_filhos = quantidade_geral_filhos / contador_famillias
 
-while opcao != 2:
-    print("= MENU DE OPÇÕES =")
-    print("1 - Adicionar família")
-    print("2 - Sair e exibir resultados")
-    
-    try:
-        opcao = int(input("Escolha uma opção: "))
-    except ValueError:
-        limpar_tela()
-        print("Entrada inválida! Digite um número do menu.\n")
-        continue
+    print('\n=== RESULTADOS DA PESQUISA ===')
+    print(f'Total de famílias que responderam a pesquisa: {contador_famillias}')
+    print(f'Média de salário da população: R$ {media_salario}')
+    print(f'Média de número de filhos: {media_numero_filhos}')
+    print(f'Maior salário: {maior_salario}')
+    print(f'Menor salário: {menor_salario}')
 
-    if opcao == 1:
-        limpar_tela()
-        print("= CADASTRAR FAMÍLIA =")
-        salario = float(input("Digite o salário da família (R$): "))
-        filhos = int(input("Digite o número de filhos: "))
-
-        soma_salarios += salario
-        soma_filhos += filhos
-        total_familias += 1
-
-        if maior_salario is None or salario > maior_salario:
-            maior_salario = salario
-        if menor_salario is None or salario < menor_salario:
-            menor_salario = salario
-
-        limpar_tela()
-        print("Família adicionada com sucesso!\n")
-
-    elif opcao == 2:
-        limpar_tela()
-        print("= RESULTADOS DA PESQUISA =")
-        if total_familias > 0:
-            media_salario = soma_salarios / total_familias
-            media_filhos = soma_filhos / total_familias
-
-            print(f"a) Total de famílias que responderam a pesquisa: {total_familias}")
-            print(f"b) Média do salário da população: R$ {media_salario:}")
-            print(f"c) Média do número de filhos: {media_filhos:}")
-            print(f"d) Maior salário: R$ {maior_salario:}")
-            print(f"e) Menor salário: R$ {menor_salario:}")
-        else:
-            print("Nenhuma família foi cadastrada.")
-        print()
-    else:
-        limpar_tela()
-        print("Opção inválida! Tente novamente.\n")
-
-
+    input('\nPressione uma tecla para continuar...')
