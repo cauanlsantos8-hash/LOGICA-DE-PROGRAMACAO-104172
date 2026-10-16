@@ -15,6 +15,6 @@ for i in range(1, 6):
     elif numero > 0:
         soma_positivos += numero
 
-print("\n=== RESULTADOS ===")
+print("\n= RESULTADOS =")
 print(f"Quantidade de números negativos: {quantidade_negativos}")
 print(f"Soma dos números positivos: {soma_positivos}")
