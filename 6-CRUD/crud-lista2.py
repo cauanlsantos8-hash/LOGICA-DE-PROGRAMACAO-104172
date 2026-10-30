@@ -71,4 +71,4 @@ while True:
         case _:
                 print('Opção inválida! \nTente novamente...')
                 
-input('\nPressione uma tecla para continuar...') 
+input('\nPressione uma tecla para continuar...')
