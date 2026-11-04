@@ -1,5 +1,5 @@
 import os
-
+import time
 
 def obter_texto_valido(mensagem):
     """Garante que nome ou posição não fiquem em branco."""
@@ -19,10 +19,9 @@ def obter_camisa_valida(mensagem, jogadores, idx_ignorar=None):
                 print("-> Erro: O número da camisa deve ser um número inteiro positivo (> 0).")
                 continue
 
-            # Verifica se a camisa já pertence a outro jogador
             camisa_duplicada = False
-            for idx, jogador in enumerate(jogadores):
-                if idx_ignorar is not None and idx == idx_ignorar:
+            for index, jogador in enumerate(jogadores):
+                if idx_ignorar is not None and index == idx_ignorar:
                     continue
                 if jogador["camisa"] == camisa:
                     camisa_duplicada = True
@@ -43,6 +42,8 @@ def cadastrar_jogador(jogadores):
     nome = obter_texto_valido("Nome: ")
     posicao = obter_texto_valido("Posição: ")
     camisa = obter_camisa_valida("Camisa: ", jogadores)
+    time.sleep(2)
+
 
     jogadores.append({"nome": nome, "posicao": posicao, "camisa": camisa})
     print("Jogador cadastrado!")
@@ -82,7 +83,7 @@ def atualizar_jogador(jogadores):
     print("\n== ATUALIZAR JOGADOR ==")
     idx = selecionar_indice_valido(jogadores, "atualizar")
     if idx is not None:
-        print("\nDigite os novos dados:")
+        print("\nDigite os novos dados abaixo: ")
         novo_nome = obter_texto_valido("Novo Nome: ")
         nova_posicao = obter_texto_valido("Nova Posição: ")
         nova_camisa = obter_camisa_valida("Nova Camisa: ", jogadores, idx_ignorar=idx)
@@ -100,6 +101,8 @@ def excluir_jogador(jogadores):
     if idx is not None:
         removido = jogadores.pop(idx)
         print(f"Jogador {removido['nome']} (#{removido['camisa']}) removido do elenco com sucesso!")
+        time.sleep(2)
+
 
 
 def buscar_jogador(jogadores):
