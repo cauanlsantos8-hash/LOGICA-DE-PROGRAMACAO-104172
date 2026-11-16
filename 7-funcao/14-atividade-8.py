@@ -7,4 +7,4 @@ def metros_para_centimetros(metros):
 valor_metros = float(input("Digite o valor em metros: "))
 
 resultado = metros_para_centimetros(valor_metros)
-print(f"{valor_metros} m equivale a {resultado} cm.")
+print(f"{valor_metros} M equivale a {resultado} CM.")
