@@ -18,7 +18,7 @@ def status_do_aluno(media):
 
 lista_notas = []
 
-print('= Solicitando Notas =')
+print('\n= Solicitando Notas =')
 for i in range(2):
     while True:
         nota = float(input('Digite uma nota: '))

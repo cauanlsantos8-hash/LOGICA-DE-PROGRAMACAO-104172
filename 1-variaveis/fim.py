@@ -1,4 +1,5 @@
 import os
 os.system('cls')
 
-print('=== Fim ===')
+
+print('\n --- The Last Dance ---')
